@@ -6,7 +6,12 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
-import localFont from "next/font/local";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+} from "@/components/ui/navigation-menu";
+import Link from "next/link";
 import "./globals.css";
 
 
@@ -31,6 +36,14 @@ export default function RootLayout({
         <SignedIn>
           <UserButton />
         </SignedIn>
+        {/* {children} */}
+        <NavigationMenu>
+          <NavigationMenuList>
+            <Link href="/home"> <NavigationMenuItem >Home</NavigationMenuItem></Link>
+           
+            <Link href="/about"><NavigationMenuItem >About</NavigationMenuItem></Link>
+          </NavigationMenuList>
+        </NavigationMenu>
         {children}
       </body>
     </html>
